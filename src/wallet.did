@@ -1,0 +1,12 @@
+type Transaction = record {
+    to: text;
+    amount: nat;
+    timestamp: nat64;
+};
+
+service : {
+    get_balance: () -> (nat) query;
+    send_tokens: (text, nat) -> (result text);
+    receive_tokens: (nat) -> ();
+    get_transactions: () -> (vec Transaction) query;
+};
